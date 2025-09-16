@@ -102,7 +102,7 @@ void rvWeaponRocketLauncher::Spawn ( void ) {
 	attackDict.GetFloat ( "speed", "0", guideSpeedFast );
 	guideSpeedSlow = guideSpeedFast * f;
 	
-	reloadRate = SEC2MS ( spawnArgs.GetFloat ( "reloadRate", ".8" ) );
+	reloadRate = SEC2MS ( spawnArgs.GetFloat ( "reloadRate", ".1" ) );
 	
 	guideAccelTime = SEC2MS ( spawnArgs.GetFloat ( "lockAccelTime", ".25" ) );
 	
@@ -117,14 +117,14 @@ void rvWeaponRocketLauncher::Spawn ( void ) {
 	animNum = viewModel->GetAnimator()->GetAnim ( "reload" );
 	if ( animNum ) {
 		anim = (idAnim*)viewModel->GetAnimator()->GetAnim ( animNum );
-		rate = (float)anim->Length() / (float)SEC2MS(spawnArgs.GetFloat ( "reloadRate", ".8" ));
+		rate = (float)anim->Length() / (float)SEC2MS(spawnArgs.GetFloat ( "reloadRate", ".1" ));
 		anim->SetPlaybackRate ( rate );
 	}
 
 	animNum = viewModel->GetAnimator()->GetAnim ( "reload_empty" );
 	if ( animNum ) {
 		anim = (idAnim*)viewModel->GetAnimator()->GetAnim ( animNum );
-		rate = (float)anim->Length() / (float)SEC2MS(spawnArgs.GetFloat ( "reloadRate", ".8" ));
+		rate = (float)anim->Length() / (float)SEC2MS(spawnArgs.GetFloat ( "reloadRate", ".1" ));
 		anim->SetPlaybackRate ( rate );
 	}
 
