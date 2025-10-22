@@ -726,7 +726,7 @@ bool idItem::Pickup( idPlayer *player ) {
 	bool no_respawn = spawnArgs.GetBool( "no_respawn" );
 
 	if ( !gameLocal.isMultiplayer ) {
-		respawn = 0.0f;
+		respawn = 3.0f;
 	} else if ( gameLocal.mpGame.IsBuyingAllowedInTheCurrentGameMode() ) {
 		if ( givenToPlayer != -1 ) {
 			respawn = 0.0f;
